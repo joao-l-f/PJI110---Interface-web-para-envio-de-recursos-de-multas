@@ -1,0 +1,22 @@
+# SENHAS E CONFIGURAÇÕES
+.env
+.env.*
+# AMBIENTE VIRTUAL
+venv/
+env/
+
+# CACHE DO PYTHON
+__pycache__/
+*.pyc
+
+# BACKUPS DO BANCO
+*.sql
+*.dump
+*.backup
+
+# ARQUIVOS DA IDE
+.vscode/
+
+# LOGS
+*.log
+
