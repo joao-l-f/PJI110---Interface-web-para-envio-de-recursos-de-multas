@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/hero.png') }}">
+  <title>Recursos de Multas</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  <!-- Font Awesome: Biblioteca de ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-content">
+
+    <div class="left">
+      <div class="hero">
+        <img src="{{ url_for('static', filename='img/hero.png') }}" alt="Hero">
+      </div>
+
+      <div class="title">
+        <h1>RECURSOS DE MULTAS</h1>
+        <p>SMTTU/DETRASMA - RESPEITO E RESPONSABILIDADE</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="/"><button class="btn-light">Envio de Processos</button></a>
+      <a href="/buscar"><button class="btn-light">Consultar Protocolo</button></a>
+    </div>
+
+  </div>
+</header>
+<main>
+
+  <!-- CARDS -->
+  <section class="cards">
+     
+    <!-- CARD DE INSTÂNCIAS DE RECURSOS -->
+      <div class="card card-left">
+        
+
+        <div class="option-container">
+          <h2 >Selecione uma opção</h2>
+          <label class="option">
+            <input type="radio" name="tipo" value="indicacao">
+            <div>
+              <strong>Indicação de condutor infrator</strong>
+              <span class="label">Transferência de pontos para outro condutor indicado ou qualificado mediante documentação</span>
+            </div>
+          </label>
+
+          <label class="option">
+            <input type="radio" name="tipo" value="advertencia">
+            <div>
+              <strong>Pedido de conversão em advertência</strong>
+              <span class="label">Aplicável em casos de infração leve ou média de condutores sem pontuação nos últimos doze meses</span>
+            </div>
+          </label>
+
+          <label class="option">
+            <input type="radio" name="tipo" value="defesa">
+            <div>
+              <strong>Defesa prévia</strong>
+              <span class="label">Aplicável quando não é possível conversão em advertência</span>
+            </div>
+          </label>
+
+          <label class="option">
+            <input type="radio" name="tipo" value="recurso_1ªinstancia">
+            <div>
+              <strong>Recurso em 1ª Instância (J.A.R.I)</strong>
+              <span class="label">Aplicável após indeferimento de recurso de defesa prévia</span>
+            </div>
+          </label>
+
+          <label class="option">
+            <input type="radio" name="tipo" value="recurso_2ªinstancia">
+            <div>
+              <strong>Recurso em 2ª instância (CETRAN)</strong>
+              <span class="label">Aplicável após indeferimento de recurso em 1ª instância</span>
+            </div>
+          </label>
+
+        </div>
+      </div>
+
+      <!-- CARD INFORMATIVO SOBRE A DOCUMENTAÇÃO EXIGIDA PELA INSTÂNCIA DO PROCESSO -->
+      <div class="card card-right">
+        <h2>Documentação necessária</h2>
+        <div class="doc-item">
+          <i class="fa-regular fa-envelope icon"></i>
+          <div>
+            <strong>Notificação de autuação</strong>
+            <span class="label">Arquivo contendo a multa recebida, física ou digital</span>
+          </div>
+        </div>
+        <div class="doc-item">
+          <i class="fa-solid fa-car icon"></i>
+          <div>
+            <strong>CRLV</strong>
+            <span class="label">Arquivo contendo o Certificado de Registro e Licenciamento de Veículo (CRLV/<a href="https://portalservicos.senatran.serpro.gov.br/#/veiculos/baixar-crlv" target="_blank">CRLV-e</a>)</span>
+          </div>
+        </div>
+
+        <div class="doc-item">
+          <i class="fa-regular fa-user icon"></i>
+          <div>
+            <strong>CNH (Requerente do Recurso)</strong>
+            <span class="label">Arquivo contendo a Carteira Nacional de Habilitação do interessado no recurso (frente e verso)</span>
+          </div>
+        </div>
+        
+        <div class="doc-item">
+          <i class="fa-regular fa-user icon"></i>
+          <div>
+            <strong>CNH (Proprietário)</strong>
+            <span class="label">Arquivo contendo a Carteira Nacional de Habilitação do proprietário do veículo (frente e verso)</span>
+          </div>
+        </div>
+
+        <div class="doc-item">
+          <i class="fa-solid fa-user-group icon"></i>
+          <div>
+            <strong>CNH (Condutor indicado)</strong>
+            <span class="label">Arquivo contendo a Carteira Nacional de Habilitação do condutor indicado, frente e verso</span>
+          </div>
+        </div>
+
+        <div class="doc-item">
+          <i class="fa-regular fa-file icon"></i>
+          <div>
+            <strong>Certidão de pontos</strong>
+            <span class="label">Arquivo contendo a Certidão de pontos dos últimos doze meses, a ser emitida no portal digital <a href="https://www.detran.sp.gov.br/detransp/pb/servico/habilitacao/emitir_certidao_pontos_cnh?id=carta_de_servico_emitir_certidao_pontos_cnh" target="_blank">Detran-SP</a></span>
+          </div>
+        </div>
+
+        <div class="doc-item">
+          <i class="fa-regular fa-file icon"></i>
+          <div>
+            <strong>Documentos que comprovem a defesa</strong>
+            <span class="label">Arquivo contendo argumentos e provas que sustentem o alegado pela defesa (fotos, documentos etc.)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- IDENTIFICAÇÃO DO REQUERENTE -->
+    <section class="requerente">
+
+      <label class="option horizontal">
+        <input type="radio" name="requerente" value="proprietario">
+        <div>
+          <strong>Proprietário</strong>
+          <span class="labelReq">O requerente é Proprietário do veículo</span>
+        </div>
+      </label>
+
+      <label class="option horizontal">
+        <input type="radio" name="requerente" value="condutor">
+        <div>
+          <strong>Condutor indicado</strong>
+          <span class="labelReq">O requerente foi indicado/qualificado pelo proprietário do veículo </span>
+        </div>
+      </label>
+
+      <label class="option horizontal">
+        <input type="radio" name="requerente" value="representante">
+        <div>
+          <strong>Representante Legal</strong>
+          <span class="labelReq">O requerente dispõe de Contrato Social 
+  ou Procuração Legal, com firma reconhecida</span>
+        </div>
+      </label>
+
+    </section>
+
+    <!-- FORMULÁRIO DE RECURSO -->
+    <section class="form-section">
+      <form id="formulario" action="/enviar" method="POST" enctype="multipart/form-data">
+   <!-- DADOS DO REQUERENTE  -->
+        <h3>Identificação</h3>
+
+        <div class="grid">
+          <input name="nome" placeholder="Nome" required>
+          <input name="cpf" placeholder="CPF/CNPJ" required>
+          <input name="telefone" placeholder="Telefone" required>
+          <input name="email" placeholder="E-mail" required>
+          <input name="placa" placeholder="Placa do veículo" required>
+        </div>
+   <!-- ENDEREÇO DO REQUERENTE -->
+        <h3>Endereço</h3>
+
+        <div class="grid">
+          <input name="rua" placeholder="Rua" required>
+          <input name="bairro" placeholder="Bairro" required>
+          <input name="numero" placeholder="Número" required>
+          <input name="cidade" placeholder="Cidade" required>
+          <select name="estado" id="estado" required>
+    <option value="">Selecione um estado</option>
+    <option value="AC">Acre</option>
+    <option value="AL">Alagoas</option>
+    <option value="AP">Amapá</option>
+    <option value="AM">Amazonas</option>
+    <option value="BA">Bahia</option>
+    <option value="CE">Ceará</option>
+    <option value="DF">Distrito Federal</option>
+    <option value="ES">Espírito Santo</option>
+    <option value="GO">Goiás</option>
+    <option value="MA">Maranhão</option>
+    <option value="MT">Mato Grosso</option>
+    <option value="MS">Mato Grosso do Sul</option>
+    <option value="MG">Minas Gerais</option>
+    <option value="PA">Pará</option>
+    <option value="PB">Paraíba</option>
+    <option value="PR">Paraná</option>
+    <option value="PE">Pernambuco</option>
+    <option value="PI">Piauí</option>
+    <option value="RJ">Rio de Janeiro</option>
+    <option value="RN">Rio Grande do Norte</option>
+    <option value="RS">Rio Grande do Sul</option>
+    <option value="RO">Rondônia</option>
+    <option value="RR">Roraima</option>
+    <option value="SC">Santa Catarina</option>
+    <option value="SP">São Paulo</option>
+    <option value="SE">Sergipe</option>
+    <option value="TO">Tocantins</option>
+  </select>
+        </div>
+        <input type="hidden" name="tipo" id="tipoHidden">
+        <input type="hidden" name="requerente" id="requerenteHidden">
+        <!-- DESCRIÇÃO DA SOLICITAÇÃO -->
+        <h3 class="descricao">Descrição</h3>
+        <div class="descricao-container">
+          <textarea name="descricao" placeholder="Descreva sua solicitação..." required maxlength="1200"></textarea>
+        </div>
+
+        <!-- CAMPO DE UPLOAD -->
+        <div class="upload-group">
+
+          <label class="upload">
+            <span>Notificação de Autuação</span>
+            <input type="file" name="notificacao" hidden required accept=".pdf,.jpg,.jpeg,.png,.docx">
+            <button type="button">Anexar</button>
+          </label>
+
+          <label class="upload">
+            <span>CRLV</span>
+            <input type="file" name="crlv" hidden required accept=".pdf,.jpg,.jpeg,.png,.docx">
+            <button type="button">Anexar</button>
+          </label>
+
+          <label class="upload">
+            <span>CNH Proprietário</span>
+            <input type="file" name="cnh_proprietario" hidden required accept=".pdf,.jpg,.jpeg,.png,.docx">
+            <button type="button">Anexar</button>
+          </label>
+
+          <label class="upload">
+            <span>CNH do Condutor</span>
+            <input type="file" name="cnh_condutor" hidden required accept=".pdf,.jpg,.jpeg,.png,.docx">
+            <button type="button">Anexar</button>
+          </label>
+
+          <label class="upload">
+            <span>Certidão de Pontos</span>
+            <input type="file" name="certidao" hidden required accept=".pdf,.jpg,.jpeg,.png,.docx">
+            <button type="button">Anexar</button>
+          </label>
+
+          <label class="upload">
+            <span>Provas de Defesa</span>
+            <input type="file" name="provas" hidden required accept=".pdf,.jpg,.jpeg,.png,.docx">
+            <button type="button">Anexar</button>
+          </label>
+
+        </div>
+        <div class="termo">
+          <input type="checkbox" name="check" required>
+          <label for="check">Declaro que autorizo o envio dos arquivos anexados aos canais institucionais desta Secretaria e assumo toda responsabilidade civil e criminal pelas informações fornecidas</label>
+        </div>
+        <div class="submit">
+          <button  id="enviar" type="submit">ENVIAR</button>
+        </div> 
+
+      </form>
+    </section>
+
+</main>
+
+<footer class="footer">
+ <strong id="SMTTU">RECURSOS DE MULTAS - SMTTU/DETRASMA</strong>
+  <p>Telefone: (15) 3279-1412</p>
+  <p>Whatsapp: (15) 3279-8010</p>
+  <p>transito@saomiguelarcanjo.sp.gov.br</p>
+  <p>Rua Dr. Júlio Prestes, Nº 1277, Centro - São Miguel Arcanjo, SP</p>
+  <p class="labelReq">Funcionamento de segunda à sexta, das 09h00 às 12h00 e 13h00 às 17h00</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
